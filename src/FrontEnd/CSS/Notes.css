@@ -1,0 +1,32 @@
+/*
+CSS的三种引入方式：
+1，行内样式 <h1 style="color:red"></h1>
+2，内部样式 通常放在head中
+<style>
+    div{
+    颜色的三种定义方式：
+        color:red;
+        color:rgb(255,0,0);
+        color:#ff0000;
+    }
+</style>
+3，外部样式 <link rel="stylesheet" href="css/style.css">
+*/
+
+/*
+CSS的三种选择器   优先级：id选择器 > 类选择器 > 元素选择器
+1，元素选择器 选择标题、段落这样的元素
+h1{
+    color:red;
+}
+2，id选择器 选择特定id的元素
+#headId{
+    color:red;
+}
+<h1 id="headId"></h1>
+3，类选择器 选择特定类名的元素
+.headClass{
+    color:red;
+}
+<h1 class="headClass"></h1>
+*/
