@@ -12,8 +12,6 @@ class MyLinkedList {
     }
 
     public int get(int index) {
-        System.out.println(head.val);
-
         if (index < 0 || index >= head.val) {
             return -1;
         }
@@ -43,7 +41,7 @@ class MyLinkedList {
     }
 
     public void addAtIndex(int index, int val) {
-        if (index >= head.val || index < 0) {
+        if (index > head.val || index < 0) {
             return;
         }
 
