@@ -13,4 +13,80 @@
 <body>
 
 </body>
+<script>
+    /*
+    JS的输出语句
+        1，alert("Hello World! out"); 写入警告框
+        2，document.write("Hello World! out"); 写入HTML页面
+        3，console.log("Hello World! out"); 写入浏览器控制台
+    */
+
+    /*
+    变量定义方式：var、let、const
+        1，var：全局变量，可重复定义
+        2，let：局部变量，不可重复定义
+        3，const：常量，不可修改
+    */
+    var n1 = 1;
+    var n1 = 'A';
+    let n2 = 2;
+    const n3 = 3;
+
+    /*
+    JS的数据类型
+    1，基本数据类型：
+        1，Number：整数、小数、NaN、Infinity
+        2，String：字符串
+        3，Boolean：布尔值
+        4，Null：空值
+        5，Undefined：未定义
+    2，引用数据类型：
+        1，Object：对象
+        2，Array：数组
+        3，Function：函数
+    */
+    /*
+    let s1 = 'Hello World!';
+    alert(typeof s1); // string
+    alert(typeof null); // object
+    */
+
+    /*
+    JS中特殊的运算符
+        ==：会进行类型转换，如1 == '1'，true
+        ===：不会进行类型转换，如1 === '1'，false
+    */
+
+    /*
+    JS类型转换
+    （1）字符串转换为数字
+        1，alert(parseInt("13")) // 13
+        2，alert(parseFloat("13.5")) // 13.5
+        3，alert(parseInt("13A5")) // 13
+        4，alert(parseInt("A13")) // NaN
+    （2）其他类型转换为boolean
+        1，Number：0、NaN：false，其他：true
+        2，String：空字符串：false，其他：true
+        3，Null和Undefined：false
+    */
+
+    /*
+    JS函数的定义方式：
+    1、
+    function add(a, b) {
+        return a + b;
+    }
+
+    let result = add(1, 2);
+    alert(result);
+
+    2、
+    let sub = function (a, b) {
+        return a - b;
+    }
+    alert(sub(1, 2));
+
+    JS函数可以传递任意个数的参数
+    */
+</script>
 </html>
