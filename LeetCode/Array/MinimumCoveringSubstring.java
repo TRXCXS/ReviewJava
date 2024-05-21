@@ -34,7 +34,7 @@ public class MinimumCoveringSubstring {
             sMap.put(t.charAt(i), 0);
         }
 
-        // 初始长度为最大值，之后若存在更短子串，则记录窗口左右位置
+        // 初始长度为最大值，之后若存在更短子串，则记录窗口的左右位置
         int left = 0, right = 0, minLeft = 0, minRight = 0, length = Integer.MAX_VALUE;
         for (; left <= s.length() - t.length() && right < s.length(); right++) {
             // 更新sMap
