@@ -3,59 +3,42 @@ package StackAndQueue;
 // 30 https://leetcode.cn/problems/implement-stack-using-queues/
 
 /**
- * pop和top时使用backupQueue来备份mainQueue的前n-1个元素，以拿到最后进入的元素
+ * 用一个队列就可以模拟栈
+ * 把前n-1个元素移到队列末尾，再对最后一个元素进行操作，即可以实现栈后进先出的特性
  */
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class MyStack {
-    private final Queue<Integer> mainQueue;
-    private final Queue<Integer> backupQueue;
+    private final Queue<Integer> queue;
 
     public MyStack() {
-        mainQueue = new ArrayDeque<>();
-        backupQueue = new ArrayDeque<>();
+        queue = new ArrayDeque<>();
     }
 
     public void push(int x) {
-        mainQueue.add(x);
+        queue.add(x);
     }
 
     public int pop() {
-        dataBackup();
-        int e = mainQueue.remove();
-        dataRecovery();
-
-        return e;
+        for (int i = 0; i < queue.size() - 1; i++) {
+            queue.add(queue.remove());
+        }
+        return queue.remove();
     }
 
     public int top() {
-        dataBackup();
-        int e = mainQueue.remove();
-        dataRecovery();
-        mainQueue.add(e);
+        for (int i = 0; i < queue.size() - 1; i++) {
+            queue.add(queue.remove());
+        }
+        int e = queue.remove();
+        queue.add(e);
 
         return e;
     }
 
     public boolean empty() {
-        return mainQueue.isEmpty();
-    }
-
-    public void dataBackup() {
-        // 将前面的n-1个元素备份到backupQueue
-
-        while (mainQueue.size() > 1) {
-            backupQueue.add(mainQueue.remove());
-        }
-    }
-
-    public void dataRecovery() {
-        // 将backupQueue中的元素恢复到mainQueue
-
-        while (!backupQueue.isEmpty()) {
-            mainQueue.add(backupQueue.remove());
-        }
+        return queue.isEmpty();
     }
 }
